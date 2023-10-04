@@ -1,0 +1,99 @@
+def matakuliah():
+    print("="*25)
+    print("daftar mata kuliah")
+    print("Algoritma pemograman")
+    print("matematika")
+    print("Statistika")
+    print("Pemograman Web")
+    print("TBO")
+    print("Agama")
+    print("="*25)
+matakuliahmu = []
+def sistem():
+    matakuliah()
+    nama=str(input("masukan nama : "))
+    npm=int(input("masukan npm : "))
+    ipk =float(input("masukan ipk : "))
+    hitung=0
+    while(True):
+        hitung+=1
+        if ipk >= 3.5 and ipk <= 4:
+            print("anda dapat memasukan matkul sebanyak 6 kali ")
+            print("silahkan masukan matkul yang ingin diambil :")
+            matakuliahmu.append(input("mata kuliah : "))
+            if hitung == 6:
+                print("nama anda :" ,nama)
+                print("npm anda : " ,npm)
+                print("ipk anda : " ,ipk)
+                print("="*25)
+                print("mata kuliah yang akan anda ambil ")
+                print(matakuliahmu[0])
+                print(matakuliahmu[1])
+                print(matakuliahmu[2])
+                print(matakuliahmu[3])
+                print(matakuliahmu[4])
+                print(matakuliahmu[5])
+                print("="*25)
+                break
+        if ipk >= 3 and ipk <= 3.49:
+            print("anda dapat memasukan matkul sebanyak 4 kali ")
+            print("silahkan masukan matkul yang ingin diambil :")
+            matakuliahmu.append(input("mata kuliah : "))
+            if hitung == 4:
+                print("nama anda :" ,nama)
+                print("npm anda : " ,npm)
+                print("ipk anda : " ,ipk)
+                print("="*25)
+                print("mata kuliah yang akan anda ambil ")
+                print(matakuliahmu[0])
+                print(matakuliahmu[1])
+                print(matakuliahmu[2])
+                print(matakuliahmu[3])
+                print("="*25)
+                break
+        if ipk >= 3 and ipk <= 3.49:
+            print("anda dapat memasukan matkul sebanyak 4 kali ")
+            print("silahkan masukan matkul yang ingin diambil :")
+            matakuliahmu.append(input("mata kuliah : "))
+            if hitung == 4:
+                print("nama anda :" ,nama)
+                print("npm anda : " ,npm)
+                print("ipk anda : " ,ipk)
+                print("="*25)
+                print("mata kuliah yang akan anda ambil ")
+                print(matakuliahmu[0])
+                print(matakuliahmu[1])
+                print(matakuliahmu[2])
+                print(matakuliahmu[3])
+                print("="*25)
+                break
+        if ipk >= 2.5 and ipk <= 2.99:
+            print("anda dapat memasukan matkul sebanyak 3 kali ")
+            print("silahkan masukan matkul yang ingin diambil :")
+            matakuliahmu.append(input("mata kuliah : "))
+            if hitung == 3:
+                print("nama anda :" ,nama)
+                print("npm anda : " ,npm)
+                print("ipk anda : " ,ipk)
+                print("="*25)
+                print("mata kuliah yang akan anda ambil ")
+                print(matakuliahmu[0])
+                print(matakuliahmu[1])
+                print(matakuliahmu[2])
+                print("="*25)
+                break
+        if ipk < 2.99:
+            print("anda dapat memasukan matkul sebanyak 2 kali ")
+            print("silahkan masukan matkul yang ingin diambil :")
+            matakuliahmu.append(input("mata kuliah : "))
+            if hitung == 2:
+                print("nama anda :" ,nama)
+                print("npm anda : " ,npm)
+                print("ipk anda : " ,ipk)
+                print("="*25)
+                print("mata kuliah yang akan anda ambil : ")
+                print(matakuliahmu[0])
+                print(matakuliahmu[1])
+                print("="*25)
+                break
+sistem()
