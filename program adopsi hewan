@@ -1,0 +1,46 @@
+nama = []
+umur = []
+jenis = []
+harga = []
+
+def data():
+    nama.append(input("masukan nama hewan yang kamu adopsi  : "))
+    umur.append(input("masukan umurmu hewan yang kamu adopsi : "))
+    jenis.append(input("masukan jenis hewan yang kamu adopsi : "))
+    harga.append(input("masukan harga hewan yang kamu adopsi : "))
+    
+    
+def ulang():
+    gaji = float (input("masukan penghasilan anda (dalam juta): "))
+    print("silahkan isi data ini ")
+    hitung=0
+    while(True):
+        hitung+=1
+        if gaji > 10 :
+            data()
+            if hitung == 3:
+                print("="*25)
+                print("nama","umur","jenis","harga")
+                print (nama[0],umur[0],jenis[0],harga[0])
+                print (nama[1],umur[1],jenis[1],harga[1])
+                print (nama[2],umur[2],jenis[2],harga[2])
+                print("="*25)
+        if gaji <=10 and gaji >5:
+            data()
+            if hitung == 2:
+                print("="*25)
+                print("nama","umur","jenis","harga")
+                print (nama[0],umur[0],jenis[0],harga[0])
+                print (nama[1],umur[1],jenis[1],harga[1])
+                print("="*25)
+                break
+        if gaji <=5 and gaji >=1:
+            data()
+            if hitung == 1:
+                print("="*25)
+                print("nama","umur","jenis","harga")
+                print (nama[0],umur[0],jenis[0],harga[0])
+                print("="*25)
+                break
+ 
+ulang()
