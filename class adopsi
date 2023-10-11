@@ -1,0 +1,24 @@
+class adopsi:
+    def __init__(self,nama,umur,warna,harga):
+        self.nama = nama
+        self.umur = umur
+        self.warna = warna
+        self.harga = harga
+        
+    def ngeong(self):
+        print("miaw..........")
+        
+    def tampil(self):
+        print("Nama = ",self.nama,"umurnya = ", self.umur,
+        "warnanya = " , self.warna, "harganya = ", self.harga, "juta")
+
+objek1 = adopsi("kitty",2,"loreng",5)
+objek2 = adopsi("zaki",0,"kochengoren",1)
+
+print("nama kucing = ", objek1.nama)
+print("umur kucing = ", objek1.umur)
+print("warna kucing = ", objek2.warna)
+print("harga kucing = ", objek1.harga)
+print("suara nya"), objek1.ngeong()
+objek1.tampil
+
