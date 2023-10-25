@@ -1,0 +1,12 @@
+class menu():
+    def __init__(self,makan1,makan2, makan3) :
+        self.makan1 = makan1 #public
+        self._makan2 = makan2#protect
+        self.__makan3 = makan3 #private
+    
+        
+pesanan = menu("orek tempe","sayur kol","sayur kangkung")
+print("aku kemaren makan dengan lauk" , pesanan.makan1)
+print(pesanan.makan1,"dan",pesanan._makan2,"adalah lauk kesukaan ku")
+print("aku suka makan ",pesanan._menu__makan3,"di warteg bu cindy")
+
