@@ -1,0 +1,45 @@
+class game:
+    game1 = None
+    _game2 = None
+    __game3 = None
+    
+    def __init__(self,game1,game2,game3):
+        self.game1 = game1
+        self._game2 = game2
+        self.__game3 = game3
+        
+    def panggil_game1(self):
+        print("saya suka", self.game1)
+        
+    def _panggil_game2(self):
+        print("saya nak main", self._game2)
+        
+    def __akses_game3(self):
+        print("saya suka main ini game, namanya", self.__game3)
+    
+    def panggil_game3(self):
+        self.__akses_game3()
+
+
+game_Saya = game("Honkai star rail","Genshin Impact","Blue archieve")
+print("="*40)
+game_Saya.panggil_game3()
+game_Saya.panggil_game1()
+game_Saya._panggil_game2()
+print("="*40)
+
+class pemula(game):
+    def __init__(self, game1, game2, game3,gamepemula):
+        super().__init__(game1, game2, game3)
+        self.gamepemula = gamepemula
+    def sepuh(self):
+        self.panggil_game1(),print("aku mah masih pemula di game itu tapi")
+    def infopuh(self):
+        print("puh, ajarin dong, main game", (self.gamepemula))
+
+object = pemula("assasin creed","banana jack","pokemon","digimon")
+print("="*40)
+object.panggil_game3()
+object.sepuh()
+object.infopuh()
+print("="*40)
