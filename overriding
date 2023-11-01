@@ -1,0 +1,54 @@
+class Game():
+    def __init__(self, nama, level):
+        self.nama = nama
+        self._level = level
+    
+    def tampil(self):
+        print("level character anda di game", self.nama, "berada di level", self._level)
+    
+    #overloading    
+    def sepuh(self, waktu_main = int ):
+        if waktu_main <= 3:
+            lama = waktu_main
+            print("anda bermain di game", self.nama, "sudah level", self._level, 
+                  "dan bermain selama", waktu_main, "bulan, anda adalah definisi pemula")
+            
+        else:
+            lama = waktu_main
+            print("anda bermain di game", self.nama, "sudah level", self._level, 
+                  "dan bermain selama", waktu_main, "bulan, anda adalah definisi sepuh")
+            
+print("="*40)        
+print("Overloading")  
+alif = Game(input("masukan nama game :"),(input("masukan level anda :")))
+alif.sepuh(int(input("masukan berapa lama anda main (dalam bulan) : ")))
+alif.tampil()
+print("="*40)
+
+class nolep(Game):
+    def __init__(self, nama, level, sehari):
+        super().__init__(nama, level)
+        self.sehari = sehari
+        
+    #overriding
+    def tampil(self):
+        print("Di game", self.nama, "aku sudah level", self._level, "karena aku main" , self.sehari, "jam sehari")
+    
+    def sepuh(self, waktu_main = int ):
+        if waktu_main <= 3:
+            lama = waktu_main
+            print("anda bermain di game", self.nama, "sudah level", self._level, 
+                  "dan bermain selama", waktu_main, "bulan, anda adalah definisi pemula")
+            
+        else:
+            lama = waktu_main
+            print("anda bermain di game", self.nama, "sudah level", self._level, 
+                  "dan bermain selama", waktu_main, "bulan, anda adalah definisi sepuh")
+
+print("="*40)    
+print("Overriding")      
+alif2= nolep(input("masukan nama game :"),(input("masukan level anda :")),
+             (input("masukan berapa lama anda main (dalam jam) : ")))
+alif2.sepuh(int(input("masukan berapa lama anda main (dalam bulan) : ")))
+alif2.tampil()
+print("="*40)
