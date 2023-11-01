@@ -1,0 +1,23 @@
+class Game():
+    def __init__(self, nama, level):
+        self.nama = nama
+        self._level = level
+    
+    def tampil(self):
+        print("level character anda di game", self.nama, "berada di level", self._level)
+    
+    #overloading    
+    def tampil(self, waktu_main = int ):
+        if waktu_main <= 3:
+            lama = waktu_main
+            print("anda bermain di game", self.nama, "sudah level", self._level, 
+                  "dan bermain selama", waktu_main, "bulan, anda adalah definisi pemula")
+            
+        else:
+            lama = waktu_main
+            print("anda bermain di game", self.nama, "sudah level", self._level, 
+                  "dan bermain selama", waktu_main, "bulan, anda adalah definisi sepuh")
+            
+alif = Game(input("masukan nama game :"),(input("masukan level anda :")))
+alif.tampil(int(input("masukan berapa lama anda main (dalam bulan) : ")))
+alif.tampil(5)
