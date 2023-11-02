@@ -85,12 +85,12 @@ from pandas import DataFrame
 import pandas as pd
 import numpy as np
 
-df -= pd.read_csv('Apartemen_ok.csv')
+df = pd.read_csv('Apartemen_ok.csv')
 
 print(df)
 le=LabelEncoder()
 
-for col in df.collumns.values:
+for col in df.columns.values:
     #encoding pada variabel kategorical
     if df[col].dtypes=='object':
         data=df[col].append(df[col])
