@@ -85,4 +85,16 @@ from pandas import DataFrame
 import pandas as pd
 import numpy as np
 
-df -= pd.read_csv('apartemen_ok2.csv')
+df -= pd.read_csv('Apartemen_ok.csv')
+
+print(df)
+le=LabelEncoder()
+
+for col in df.collumns.values:
+    #encoding pada variabel kategorical
+    if df[col].dtypes=='object':
+        data=df[col].append(df[col])
+        le.fit(data.values)
+        df[col]=le.transform(df[col])
+df.head(10)
+df.to_csv('apartemen_numerik.csv', header=True, index=False)
