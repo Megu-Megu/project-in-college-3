@@ -1,0 +1,49 @@
+class Rental:
+    def __init__(self, jenis, tarif_perhari):
+        self.jenis = jenis
+        self.tarif_perhari = tarif_perhari
+
+    def hitung_biaya_sewa(self, jumlah_hari):
+        return self.tarif_perhari * jumlah_hari
+
+class DSLR(Rental):
+    def __init__(self):
+        super().__init__("DSLR", 200000)
+
+class Mirrorless(Rental):
+    def __init__(self):
+        super().__init__("Mirrorless", 300000)
+
+class ActionCam(Rental):
+    def __init__(self):
+        super().__init__("Action Cam", 350000)
+
+
+while True:
+    print("Selamat datang di Megu-Megu Store")
+    print("bebrapa jenis kamera yang dapat di rental : ")
+    print("1. DSLR")
+    print("2. Mirrorless")
+    print("3. Action Cam")
+
+    pilihan_kamera = int(input("Pilih jenis kamera yang ingin anda rental(1/2/3): "))
+    if pilihan_kamera == 1:
+        kamera = DSLR()
+    elif pilihan_kamera == 2:
+        kamera = Mirrorless()
+    elif pilihan_kamera == 3:
+        kamera = ActionCam()
+    else:
+        print("Pilihan tidak ada")
+        exit()
+
+    jumlah_hari = int(input("brapa hari anda ingin menyewa : "))
+
+    biaya_sewa = kamera.hitung_biaya_sewa(jumlah_hari)
+    print(f"Biaya sewa {kamera.jenis} selama {jumlah_hari} hari adalah: Rp {biaya_sewa}")
+    ingin = str(input("apakah anda ingin merental lagi (y/n) :"))
+    if ingin.lower() == "y":
+        continue
+    else:
+        print("Terima kasih sudah merental kamera di Megu-Megu store")
+        break
