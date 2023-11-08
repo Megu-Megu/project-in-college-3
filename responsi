@@ -1,0 +1,55 @@
+# nama = M.RInaldi Pratama
+# npm = 5220411244
+
+class Karyawan:
+    def __init__(self,nama, jabatan):
+        self.nama = nama
+        self.jabatan = jabatan
+
+    def tampil(self):
+        print("nama karyawan: ", self.nama, "jabatan: ", self.jabatan)
+
+class PartTime(Karyawan):
+    def __init__(self, nama, jabatan, jam, tarifPT=15000):
+        super().__init__(nama, jabatan)
+        self.tarifPT = tarifPT
+        self.jam = jam
+
+    def calculate_salary(self,jamkerja):
+        gaji = self.tarifPT * self.jam
+        if jamkerja >= 40 :
+            jam_lembur = self.jam - 40
+            tariflembur = 10000 * jam_lembur
+            gaji_lembur = gaji + tariflembur
+            print("gaji part time anda: ", gaji_lembur)
+            print("gaji part time anda: ",gaji)
+
+        else:
+            print("gaji part time anda: ",gaji)
+
+    def tampil(self):
+        print("nama karyawan part time: ", self.nama ," jabatan: ", self.jabatan, " jam kerja: ", self.jam, "jam")
+
+class FullTime(Karyawan):
+    def __init__(self, nama,jabatan,jam , tarifFT=600000):
+        super().__init__(nama, jabatan)
+        self.tarifFT = tarifFT
+        self.jam = jam
+
+    def calculate_salary(self, jamkerja):
+        gaji = self.tarifFT * jamkerja
+        print("gaji full time anda: ", gaji)
+
+    def tampil(self):
+        print("nama karyawan full time: ", self.nama ," jabatan: ", self.jabatan, " jam kerja: ", self.jam , "bulan")
+
+
+if __name__ == "__main__":
+    aldi = Karyawan("Aldi", "tukang antar")
+    zaki = PartTime("zaki", "chef", 12)
+    dino = FullTime("Dino", "kasir", 5)
+    aldi.tampil()
+    zaki.tampil()
+    dino.tampil()
+    zaki.calculate_salary(12)
+    dino.calculate_salary(2)
