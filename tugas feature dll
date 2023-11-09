@@ -1,0 +1,62 @@
+from sklearn.preprocessing import LabelEncoder, MinMaxScaler
+import pandas as pd
+import numpy as np
+
+#mengecek missing data
+df = pd.read_excel('data_karyawan.xlsx')
+missing_data = df.isnull() 
+print("Missing data yang sudah di cek : ")
+print("="*25)
+print (missing_data)
+
+print("="*25)
+#mengecek apakah ada missing value
+mengecek = df.isnull().values.any()
+if mengecek == True:
+    print("hasil pengecekan : True")
+    print("di data ini terdapat missing value ")
+else:
+    print("hasil pengecekan : False")
+    print("di data ini tidak ada missing value sama sekali")
+
+print("="*25)
+#menghitung jumlah missing data dan menemukan nya
+jumlah_ms = missing_data.sum()
+print("Missing data dapat ditemukan di : ")
+print(jumlah_ms)
+print("="*25)
+hitung_missing_value=df.isnull().sum().sum()
+print("jumlah missing value ada ", (hitung_missing_value), "data")
+print("="*25)
+
+#bersihkan missing value
+df.dropna(inplace=False)
+print("missing value sudah dibersihkan")
+print("="*25)
+
+#mengubah missing value menggunakan nilai khusus
+for i in range(len(df)):
+    if pd.isna(df.at[i, 'First Name',]):
+        df.at[i, 'First Name'] = "Anonim"
+
+for i in range(len(df)):
+    if pd.isna(df.at[i, 'Gender']):
+        df.at[i, 'Gender'] = "Tidak mengisi"
+
+for i in range(len(df)):
+    if pd.isna(df.at[i, 'Team']):
+        df.at[i, 'Team'] = 'tidak diketahui'  
+
+#mengubah missing value menggunakan nilai modus
+for i in range(len(df)):
+    if pd.isna(df.at[i, 'Senior Management']):
+        df['Senior Management'].fillna(df['Senior Management'].
+        mode()[0], inplace=True)
+
+#FEATURE SCALING
+print('Melakukan Feature Scaling dengan min max scaling')
+kolom = ['Salary', 'Bonus %']
+minmax = MinMaxScaler()
+df[kolom] = minmax.fit_transform(df[kolom])
+
+df.to_excel("data_.xlsx", index=True)
